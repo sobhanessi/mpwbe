@@ -1,0 +1,21 @@
+	
+	
+	<form method="POST" action='.' > {% csrf_token %}
+		<p>esme nevisande :</p>
+		{{ form.author }}
+		<br>
+		<p>title :</p>
+		{{ form.title  }}
+		<br>
+		<p>news pic :</p>
+		{{ form.news_pic  }}
+		<br>
+		<p>news par :</p>
+		{{ form.news_par  }}
+		<br>
+		<p>news long par :</p>
+		{{ form.news_long_par  }}
+		<br>
+		
+		<input type='submit' value='submit'>
+	</form>

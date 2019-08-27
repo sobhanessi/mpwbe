@@ -1,0 +1,82 @@
+
+    div{
+		color:white;
+	}
+    
+   
+    @media (max-width:750px){
+
+        .imgaboutmepage{
+
+          width: 80%;
+          height:60%;
+          margin: 0 5% 5% 5%;
+          
+
+        }
+
+        .articleaboutmepage{
+
+          width: 85%;
+          margin: 0 5% 0 5%;
+          
+        }
+
+        .paragraphaboutmepage{
+
+          color: white;
+          width: 90%;
+          margin:0 10% 5% 5%;
+
+        }
+
+        .headingaboutmepage{
+          width: 90%;
+          color:#ff6266;
+          margin:0 10% 5% 5%;
+        }
+	
+		
+    }
+
+
+    @media (min-width:751px){
+
+        .imgaboutmepage{
+
+          width: 40%;
+          height:30%;
+          margin: 0 10% 0 30%;
+          
+
+        }
+
+        .articleaboutmepage{
+
+          width: 85%;
+          padding: 0 0 0 25%;
+	  float:center;
+          
+        }
+
+        .paragraphaboutmepage{
+
+          color: white;
+          width: 65%;
+
+        }
+
+        .headingaboutmepage{
+
+          color:#ff6266;
+        }
+		
+    }
+
+
+    .footerclass{
+	
+	position:static;
+ 
+	}
+	

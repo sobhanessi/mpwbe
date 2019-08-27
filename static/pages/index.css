@@ -1,0 +1,62 @@
+	
+    @media screen and (max-width:750px){
+	
+	  #articleparagraph {
+		
+	    position:fixed;
+	    top:45%;
+	    left:0;
+	    width:85%;
+	    height:100%;
+		
+		
+	  }
+		
+	 #indexparagraph{
+		    
+	    margin:0 2% 0 5%;
+	    text-align:center;
+	    font-size:9.5px;
+	    color:rgb(0, 195, 54);
+	    height:100%;	    
+	  }	
+		
+	}
+
+
+    @media (min-width:751px){
+	
+	#articleparagraph {
+	    
+	    
+	    position:fixed;
+	    top:40%;
+	    left:0;
+	    width:100%;
+	    height:100%;
+	
+	
+	}
+	
+	#indexparagraph{
+	    
+	    text-align:center;
+	    font-size:20px;
+	    color:rgb(0, 195, 54);
+	    height:100%;
+	    
+	}
+
+	}
+
+
+    .divfornav{
+
+        overflow:hidden;
+    
+    }
+
+
+    .footerclass {
+	position:absolute;
+    }

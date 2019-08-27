@@ -1,0 +1,23 @@
+
+    .divfornav{
+
+        overflow:hidden;
+    
+    }
+    
+    .container {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+ 
+    .footerclass{
+
+	position:absolute;
+    }
+    
+    #formid {
+    
+	width:80%;
+	height:15px;
+    }

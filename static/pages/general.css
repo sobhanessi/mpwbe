@@ -1,0 +1,39 @@
+    
+@charset "UTF-8";
+
+*{font-family: 'Source Code Pro', monospace;}
+
+html {
+    scroll-behavior: smooth;
+    }
+
+
+body{
+		
+	background-color:  rgb(45, 46, 48);
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-attachment:fixed;
+	background-size:cover;
+	margin:0;
+	}
+	
+header, section, footer, nav, aside, main, article, figure, form {
+	
+	display: block; 
+  
+  }
+
+ul li {
+  
+	display: inline;
+	
+  }
+
+
+
+hr{
+
+	color:white;
+
+  }

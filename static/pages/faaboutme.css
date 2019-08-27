@@ -1,0 +1,307 @@
+@charset "UTF-8";
+
+*{font-family: 'Source Code Pro', monospace;}
+
+html {
+    scroll-behavior: smooth;
+    
+
+    }
+
+    div{
+		color:white;
+	}
+    
+    
+    
+    @media screen and (max-width:950px) {
+    
+      .topnav{
+
+	    
+	    position:sticky;
+	    float:none;
+	    display:block;
+	    text-align:center;
+	    
+	    font-size:18px;
+	    padding: 2% 1% 1% 2%;
+	    
+
+	 }
+	 
+	 .topnav a:not(:first-child) {
+	 
+	    display:none;
+	    
+	    
+	 }
+	 
+	 .topnav a.icon {
+	 
+	    display:block;
+	    float:right;
+	    
+	    
+	    
+	 }
+	 
+	 .topnav.responsive {
+	 
+	    position:sticky;
+	 
+	 }
+	 
+	 .topnav.responsive .icon{
+	 
+	    position:absolute;
+	    right:0;
+	    top:0;
+	    padding : 2% 1% 1% 2%;
+	    
+	 }
+	 
+	 .topnav.responsive a {
+	 
+	    display:block;
+	    float:none;
+	    text-align:left;
+	 
+	 }
+    
+    }
+    
+    
+    @media screen and (min-width:951px){
+	
+	  .topnav{
+	    
+	    width:100%;
+	    float:center;
+	    text-align:center;
+        overflow:hidden;
+	    padding: 1% 10px 10px 5px;
+          
+        }
+	
+	.topnav .icon{
+	
+	  display:none;
+	  
+	  
+	}
+	
+	.topnav a {
+	  
+	  float:center;
+	  text-align:left;
+	  font-size:16px;
+	  padding:0 2% 0 2%;
+	  text-decoration:none;
+	
+	}
+	
+    }
+    
+    
+    
+    
+    @media (max-width:750px){
+
+        body{
+            
+            background-color:  rgb(45, 46, 48);
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-attachment:fixed;
+            background-size:cover;
+		
+        }
+		
+
+        .imgaboutmepage{
+
+          width: 80%;
+          height:60%;
+          margin: 0 5% 5% 5%;
+          
+          
+
+        }
+
+        .articleaboutmepage{
+
+          width: 85%;
+          margin: 0 5% 0 5%;
+          
+        }
+
+        .paragraphaboutmepage{
+
+          color: white;
+          width: 90%;
+          margin:0 10% 5% 5%;
+          direction:rtl;
+
+        }
+
+        .headingaboutmepage{
+          width: 90%;
+          color:rgb(30, 144, 255);
+          margin:0 10% 5% 5%;
+          direction:rtl;
+          
+        }
+	
+		
+	}
+
+
+    @media (min-width:751px){
+
+        body{
+            
+            background-color: rgb(45, 46, 48);
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-attachment:fixed;
+            background-size:cover;
+			
+
+        }
+	
+        .imgaboutmepage{
+
+          width: 40%;
+          height:30%;
+          margin-left:35%;
+          direction:rtl;
+          
+		  
+
+        }
+
+        .articleaboutmepage{
+
+          
+          width: 85%;    
+          overflow:hidden;
+          
+         
+          
+          
+        }
+
+        .paragraphaboutmepage{
+
+          color: white;
+          
+          width: 80%;
+          direction:rtl;
+          float:right;
+          
+          
+
+        }
+
+        .headingaboutmepage{
+			
+		  width:90%;
+		  
+          color:rgb(30, 144, 255);
+          float:right;
+          direction:rtl;
+          
+          
+        }
+		
+	}
+
+
+
+        a:link {
+
+            color: rgb(247, 156, 46);
+            text-decoration: none;
+          }
+
+
+      a:visited {
+
+          color: rgb(247, 156, 46);
+          text-decoration: none;
+
+        }
+
+
+      a:hover {
+
+          color: rgb(38, 131, 168);
+          text-decoration: none;
+
+      }
+
+
+      a:active {
+
+          color: blue;
+          text-decoration: none;
+
+      }
+
+    
+      header, section, footer, nav, aside, main, article, figure, form {
+          
+        display: block; 
+      
+      }
+
+      ul li {
+      
+        display: inline;
+        
+      }
+  
+
+    
+      hr{
+
+        color:white;
+
+      }
+
+      .topnav{
+
+		overflow:hidden;
+		
+		top:0;
+		
+		margin:0 auto;
+		
+		background-color:rgb(45, 46, 48);
+		
+    
+    }
+
+    .searchfrom{
+
+        display: inline;
+        color: black;
+    }
+
+        .footerclass{
+
+            position:static;
+            bottom: 0;
+            align:center;
+            width:100%;
+            text-align:center;
+            display: inline;
+            align-items: center;
+            justify-content: center;
+            color:white;
+            
+        
+}
+	
+

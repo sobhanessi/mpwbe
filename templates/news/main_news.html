@@ -1,0 +1,25 @@
+{% extends './news.html' %}
+{% load static %}
+{% block static_css_adding %}
+    <link href="{% static 'pages/news.css' %}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block main_news %}
+	
+	{% for i in object_list %}
+		<article class="articlenewspage">
+		  <img class="imgnewspage" src="{{ i.news_pic.url }}" alt="akse khabar">
+		  <a href="{{ i.get_absolute_url }}">
+			  <h3 class="headingnewspage">
+					{{ i.title }}
+			  </h3>
+		  </a>
+		  <p class="paragraphnewspage">
+			{{ i.news_par | safe }}
+		  <a href="{{ i.get_absolute_url }}">Read More</a>
+		  </p>
+		</article>
+		<br><br><br>
+		<hr>
+	{% endfor %}
+{% endblock %}
