@@ -78,17 +78,17 @@ def login_view(request):
 	# ~ return render(request,'news/main_news.html',my_context)
 	
 
-class NewsSubView(DetailView):
+# ~ class NewsSubView(DetailView):
 	
-	template_name = 'news/sub_news.html'
-	model = NewsModel
-	queryset = NewsModel.objects.all()
+	# ~ template_name = 'news/sub_news.html'
+	# ~ model = NewsModel
+	# ~ queryset = NewsModel.objects.all()
 	
-	def get_object(self):
-		id_ = self.kwargs.get('id')
-		print(id_)
+	# ~ def get_object(self):
+		# ~ id_ = self.kwargs.get('id')
+		# ~ print(id_)
 		
-		return get_object_or_404(NewsModel,id=id_)
+		# ~ return get_object_or_404(NewsModel,id=id_)
 		
 		
 		
