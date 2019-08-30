@@ -8,13 +8,13 @@
 {% block main_news %}
 		<hr>
 		<article class="articlenewspage">
-		  <img class="imgnewspage" src="{{ object.news_pic.url }}" alt="akse khabar">
+		  <img class="imgnewspage" src="{{ object.main_pic.url }}" alt="akse khabar">
 		  <br><br>
 		  <h3 class="headingnewspage">
 			{{ object.title }}
 		  </h3>
 		  <p class="paragraphnewspage">
-			{{ object.news_par | safe }}
+			{{ object.article | safe }}
 		  </p>
 		</article>
 		<br><br><br>

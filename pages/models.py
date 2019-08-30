@@ -11,6 +11,19 @@ class LoginFormModel(models.Model):
 	def __str__(self):
 		return self.username
 
+# ~ class PreNews(models.Model):
+	
+	# ~ autor = models.ForeignKey('email.LoginFormModel', on_delete = models.CASCADE ,)
+	# ~ title = models.TextField(max_length=100,null=False)
+	# ~ date = models.DateTimeField(auto_now_add=True)
+	# ~ main_pic = models.ImageField(upload_to='images/',null=False)
+	# ~ brief = models.TextField(max_length=255,null=False)
+	# ~ article = models.TextField(null=False)
+	
+	# ~ class Meta:
+		# ~ abstract = True
+
+
 class NewsModel(models.Model):
 	
 	title		= models.CharField(max_length=80,null=False,blank=False)

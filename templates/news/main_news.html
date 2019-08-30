@@ -8,14 +8,14 @@
 	
 	{% for i in object_list %}
 		<article class="articlenewspage">
-		  <img class="imgnewspage" src="{{ i.news_pic.url }}" alt="akse khabar">
+		  <img class="imgnewspage" src="{{ i.main_pic.url }}" alt="akse khabar">
 		  <a href="{{ i.get_absolute_url }}">
 			  <h3 class="headingnewspage">
 					{{ i.title }}
 			  </h3>
 		  </a>
 		  <p class="paragraphnewspage">
-			{{ i.news_par | safe }}
+			{{ i.brief | safe }}
 		  <a href="{{ i.get_absolute_url }}">Read More</a>
 		  </p>
 		</article>

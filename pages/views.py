@@ -6,12 +6,11 @@ from .models import LoginFormModel,NewsModel,ContactFormModel
 from django.views.generic import ListView,UpdateView,CreateView,DeleteView,DetailView
 
 
-class NewsView(ListView):
+# ~ class NewsView(ListView):
 	
-	template_name = 'news/main_news.html'
-	model = NewsModel
-	queryset 	  = NewsModel.objects.order_by('-date')
-	print(queryset)
+	# ~ template_name = 'news/main_news.html'
+	# ~ queryset 	  = NewsModel.objects.order_by('-date')
+	
 	
 
 def news_create_view(request):
