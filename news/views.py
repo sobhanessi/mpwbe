@@ -23,5 +23,5 @@ class NewsDetailView(DetailView):
 class NewsCreateView(CreateView):
 	
 	model = PreNews
-	template_name = 'create/newscreate.html'
+	template_name = 'create/news_create.html'
 	fields = '__all__'
