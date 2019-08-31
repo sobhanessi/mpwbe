@@ -5,8 +5,16 @@ from django.urls import reverse
 
 class PreNews(models.Model):
 	
+	computer_hardware = 'chw'
+	computer_software = 'csw'
+	politics_iran 	  = 'pir'
+	politics_international = 'pin'
+	
+	news_type = [ ('computer','computer')
 	author = models.ForeignKey('pages.LoginFormModel', on_delete = models.CASCADE ,)
 	title = models.TextField(max_length=100,null=False)
+	#tags = models.TextField()
+	#choice = models.CharField(max_length=3 , choices=news_choice , default=csw)
 	slug = models.SlugField(unique=True)
 	date = models.DateTimeField(auto_now_add=True)
 	main_pic = models.ImageField(upload_to='images/',null=False)
