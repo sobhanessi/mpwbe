@@ -1,5 +1,6 @@
+{% extends 'base.html' %}
 	
-	
+	{% block content %}
 	<form method="POST" action='.' > {% csrf_token %}
 		<p>esme nevisande :</p>
 		{{ form.author }}
@@ -8,14 +9,15 @@
 		{{ form.title  }}
 		<br>
 		<p>news pic :</p>
-		{{ form.news_pic  }}
+		{{ form.main_pic  }}
 		<br>
 		<p>news par :</p>
-		{{ form.news_par  }}
+		{{ form.brief  }}
 		<br>
 		<p>news long par :</p>
-		{{ form.news_long_par  }}
+		{{ form.article  }}
 		<br>
 		
 		<input type='submit' value='submit'>
 	</form>
+	{% endblock %}

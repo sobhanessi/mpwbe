@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path ,include
 from django.conf import settings #
 from django.conf.urls.static import static #
-from pages.views import login_view , contact_view , politics_view , news_create_view
+from pages.views import login_view , contact_view , politics_view 
 
 urlpatterns = [
     
@@ -28,7 +28,7 @@ urlpatterns = [
     path('login/', login_view , name='login'),
     path('contact/', contact_view , name = 'contact'),
     path('politics/', politics_view , name='politics'),
-    path('newscreate/', news_create_view ),
+    #path('newscreate/', news_create_view ),
     
     ]
 if settings.DEBUG: # new

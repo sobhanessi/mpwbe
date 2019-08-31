@@ -13,22 +13,22 @@ from django.views.generic import ListView,UpdateView,CreateView,DeleteView,Detai
 	
 	
 
-def news_create_view(request):
+# ~ def news_create_view(request):
 	
-	my_form = NewsCreateForm
-	if request.method == 'POST':
-		my_form = NewsCreateForm(request.POST)
-		if my_form.is_valid():
-			usrn = request.POST.get('author')
-			try:
-				usr_chk = LoginFormModel.objects.get(username=usrn)
-				news_create = NewsModel.objects.create(**my_form.cleaned_data)
-			except:
-				raise Http404
-	my_context = {
-		'form': my_form
-	}	
-	return render(request,'create/newscreate.html',my_context)
+	# ~ my_form = NewsCreateForm
+	# ~ if request.method == 'POST':
+		# ~ my_form = NewsCreateForm(request.POST)
+		# ~ if my_form.is_valid():
+			# ~ usrn = request.POST.get('author')
+			# ~ try:
+				# ~ usr_chk = LoginFormModel.objects.get(username=usrn)
+				# ~ news_create = NewsModel.objects.create(**my_form.cleaned_data)
+			# ~ except:
+				# ~ raise Http404
+	# ~ my_context = {
+		# ~ 'form': my_form
+	# ~ }	
+	# ~ return render(request,'create/newscreate.html',my_context)
 	
 
 
