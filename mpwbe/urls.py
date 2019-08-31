@@ -22,6 +22,7 @@ from pages.views import login_view , contact_view , politics_view , news_create_
 urlpatterns = [
     
     path('', include('static_pages.urls')),
+    path('aboutme/', include('static_pages.urls')),
     path('news/', include('news.urls')),
     path('admin/', admin.site.urls),
     path('login/', login_view , name='login'),

@@ -16,5 +16,5 @@ class PreNews(models.Model):
 	def __str__(self):
 		return (self.title," ---- ",self.date.year ,"-",self.date.month,"-" ,self.date.day," ---- " ,self.date.hour ,":", self.date.minute," ---- ",self.author)
 	def get_absolute_url(self):
-		return reverse('news:sub_news_url', kwargs = { 'slug' : self.slug ,'year' : self.date.year , 'month' : self.date.month , 'day' : self.date.day })
+		return reverse('sub_news_url', kwargs = { 'slug' : self.slug ,'year' : self.date.year , 'month' : self.date.month , 'day' : self.date.day })
 		
