@@ -16,7 +16,7 @@ class PreNews(models.Model):
 		(politics_international,'international politics'),
 			]
 	
-	author = models.ForeignKey('pages.LoginFormModel', on_delete = models.CASCADE ,)
+	author = models.ForeignKey('auth.User', on_delete = models.CASCADE ,)
 	title = models.TextField(max_length=100,null=False)
 	tags = models.TextField(default='sobhan esfandyari,')
 	choice = models.CharField(max_length=3 , choices=news_choice , default=software)
@@ -30,5 +30,5 @@ class PreNews(models.Model):
 		return (self.title," ---- ",self.date.year ,self.date.month ,self.date.day ," ---- " ,self.date.hour ,":", self.date.minute," ---- ",self.author)
 	
 	def get_absolute_url(self):
-		return reverse('sub_news_url', kwargs = { 'slug' : self.slug ,'year' : self.date.year , 'month' : self.date.month , 'day' : self.date.day })
+		return reverse('news:sub_news_url', kwargs = { 'slug' : self.slug ,'year' : self.date.year , 'month' : self.date.month , 'day' : self.date.day })
 		
