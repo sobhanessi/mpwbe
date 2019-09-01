@@ -5,7 +5,7 @@ urlpatterns = [
 	
 	path('', NewsListView.as_view(), name='news'),
 	path('create/', NewsCreateView.as_view(), name='news_create'),
-	path('<int:year>/<int:month>/<int:day>/<slug:slug>/', NewsDetailView.as_view(), name='sub_news_url'),
+	path('<slug:slug>/', NewsDetailView.as_view(), name='sub_news_url'),
 	
 	
 	 ] 

@@ -1,8 +1,9 @@
 from django.shortcuts import render , get_object_or_404
 # Create your views here.
-from django.views.generic import ListView, DetailView 
+from django.views.generic import ListView, DetailView #, CreateView
 from django.views.generic.edit import CreateView
 from .models import PreNews
+from .forms import PreNewsForm
 
 class NewsListView(ListView):
 	
@@ -24,9 +25,11 @@ class NewsDetailView(DetailView):
 class NewsCreateView(CreateView):
 	
 	model = PreNews
-	template_name = 'create/news_create.html'
-	fields = '__all__'
-	#succes_url = '/news/'
-	# ~ def get_object(self):
-		# ~ slug_ = self.kwargs.get('slug')
-		# ~ return get_object_or_404(PreNews,slug=slug_)
+	template_name = 'create/newscreate.html'
+	fields = [ 'author' , 'title' , 'main_pic' , 'choice', 'brief', 'article', 'slug', 'tags' ]
+	
+	
+	# ~ def form_valid(self, form):
+		# ~ #print(form.cleaned_data)
+		# ~ return super().form_valid(form)
+	
