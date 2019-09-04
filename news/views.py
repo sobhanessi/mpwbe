@@ -2,9 +2,9 @@ from django.shortcuts import render , get_object_or_404
 from django.urls import reverse
 from django.http import HttpResponse
 # Create your views here.
-from django.views.generic import ListView, DetailView #, CreateView
-from django.views.generic.edit import CreateView
-from .models import PreNews
+from django.views.generic import ListView, DetailView , CreateView
+#from django.views.generic.edit import CreateView
+from .models import PreNews , NewsCreateTM
 from .forms import PreNewsForm
 
 class NewsListView(ListView):
@@ -25,24 +25,25 @@ class NewsDetailView(DetailView):
 		
 
 class NewsCreateView(CreateView):
-	
+
 	model = PreNews
 	#fields = [ 'author' , 'title' , 'main_pic' , 'choice', 'brief', 'article', 'slug', 'tags' ]
 	fields = '__all__'
 	#form_class = PreNewsForm
-	template_name = 'create/newscreate.html'
+	template_name = 'create/news_create.html'
 	
-	def form_valid(self, form):
+	# ~ def form_valid(self, form):
 		
-		model = form.save(commit=False)
-		model.author = self.request.user
-		model.save()
+		# ~ model = form.save(commit=False)
+		# ~ model.author = self.request.user
+		# ~ model.save()
 		
-		return HttpResponse('naridi khodaro shokr')
+		# ~ return HttpResponse('naridi khodaro shokr')
 		
-	def get_success_url(self):
+	# ~ def get_success_url(self):
 		
-		return reverse('sub_news_url')
+		# ~ return reverse('sub_news_url')
+		
 		#print(self.request.user)
 		# ~ self.object = form.save(commit=False)
 		# ~ self.object.author = self.request.author
@@ -55,4 +56,12 @@ class NewsCreateView(CreateView):
 	# ~ def form_valid(self, form):
 		# ~ #print(form.cleaned_data)
 		# ~ return super().form_valid(form)
+	
+
+class NewsCreateT(CreateView):
+	
+	model = NewsCreateTM
+	template_name = 'create/news_create.html'
+	fields = '__all__'
+	
 	
