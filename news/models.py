@@ -30,7 +30,7 @@ class PreNews(models.Model):
 		return self.title
 	
 	def get_absolute_url(self):
-		return reverse('news:sub_news_url', kwargs = { 'slug' : self.slug })
+		return reverse('news:sub_news_url', kwargs = { 'slug' : self.slug ,'year' : self.date.year , 'month' : self.date.month , 'day' : self.date.day })
 		
 class NewsCreateTM(models.Model):
 	
