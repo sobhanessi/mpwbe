@@ -2,7 +2,7 @@ from django.shortcuts import render , get_object_or_404
 from django.urls import reverse
 from django.http import HttpResponse
 # Create your views here.
-from django.views.generic import ListView, DetailView , CreateView
+from django.views.generic import ListView, DetailView , CreateView , UpdateView
 #from django.views.generic.edit import CreateView
 from .models import PreNews , NewsCreateTM
 from .forms import PreNewsForm
@@ -64,4 +64,8 @@ class NewsCreateT(CreateView):
 	template_name = 'create/news_create.html'
 	fields = '__all__'
 	
+class NewsUpdateView(UpdateView):
 	
+	model = PreNews
+	template_name = 'create/news_create.html'
+	fields = '__all__'
