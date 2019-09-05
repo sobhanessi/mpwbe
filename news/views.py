@@ -1,10 +1,10 @@
 from django.shortcuts import render , get_object_or_404
-from django.urls import reverse
+from django.urls import reverse ,reverse_lazy
 from django.http import HttpResponse
 # Create your views here.
-from django.views.generic import ListView, DetailView , CreateView , UpdateView
-#from django.views.generic.edit import CreateView
-from .models import PreNews , NewsCreateTM
+from django.views.generic import ListView, DetailView  
+from django.views.generic.edit import CreateView , UpdateView , DeleteView
+from .models import PreNews #, NewsCreateTM
 from .forms import PreNewsForm
 
 class NewsListView(ListView):
@@ -58,14 +58,20 @@ class NewsCreateView(CreateView):
 		# ~ return super().form_valid(form)
 	
 
-class NewsCreateT(CreateView):
+# ~ class NewsCreateT(CreateView):
 	
-	model = NewsCreateTM
-	template_name = 'create/news_create.html'
-	fields = '__all__'
+	# ~ model = NewsCreateTM
+	# ~ template_name = 'create/news_create.html'
+	# ~ fields = '__all__'
 	
 class NewsUpdateView(UpdateView):
 	
 	model = PreNews
 	template_name = 'create/news_create.html'
 	fields = '__all__'
+
+class NewsDeleteView(DeleteView):
+	
+	model = PreNews
+	template_name = 'create/sub_news_delete.html'
+	success_url = reverse_lazy('news')

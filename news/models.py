@@ -30,17 +30,17 @@ class PreNews(models.Model):
 		return self.title
 	
 	def get_absolute_url(self):
-		return reverse('news:sub_news_url', kwargs = { 'slug' : self.slug ,'year' : self.date.year , 'month' : self.date.month , 'day' : self.date.day })
+		return reverse('sub_news_url', kwargs = { 'slug' : self.slug ,'year' : self.date.year , 'month' : self.date.month , 'day' : self.date.day })
 		
-class NewsCreateTM(models.Model):
+# ~ class NewsCreateTM(models.Model):
 	
-	author = models.ForeignKey('auth.User' , on_delete = models.CASCADE,)
-	title  = models.TextField()
-	slug   = models.SlugField(unique=True,blank=False,null=False)
-	pic	   = models.ImageField(upload_to='images/')
+	# ~ author = models.ForeignKey('auth.User' , on_delete = models.CASCADE,)
+	# ~ title  = models.TextField()
+	# ~ slug   = models.SlugField(unique=True,blank=False,null=False)
+	# ~ pic	   = models.ImageField(upload_to='images/')
 	
-	def __str__(self):
-		return self.title
+	# ~ def __str__(self):
+		# ~ return self.title
 		
-	def get_absolute_url(self):
-		return reverse('sub_news_url', kwargs = { 'slug' : self.slug })
+	# ~ def get_absolute_url(self):
+		# ~ return reverse('sub_news_url', kwargs = { 'slug' : self.slug })
