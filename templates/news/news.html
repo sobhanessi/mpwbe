@@ -6,28 +6,10 @@
     Sobhan Esfandyari Personal Website | DAWSHESSI
 </title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width , initial-scale=1.0">
-<meta name="description" content="Sobhan Esfandyari News Website">
-<meta name="author" content="sobhanessi,Sobhan Esfandyari,Sobhan Esfandiari">
+{% include 'header.html' %}
+<!-- yadam bashe inja baraye seo tag hayi ke zadam ro biaram inja -->
 <meta name="keywords" content="dawshessi, sobhanessi, sobhanesfandiari, Sobhan Esfandiari,Sobhan Esfandyari ,sobhanessi news,sobhanessi hardware,sobhan esfandiari news, dawshessi news, dawshessi hardware">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-<![endif]-->
 
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet"> 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-  
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 {% load static %}
 <link href="{% static 'pages/general.css' %}" rel="stylesheet" type="text/css" />
   {% block static_css_adding %}
@@ -36,14 +18,13 @@
 {% include 'navbar.html' %}
 <body id="indexbody">
 
-<br>
-<hr>
-<br><br><br><br>
+
+<hr><br><br>
     
     {% block main_news %}
     {% endblock %}
     
-<br><br><br>
+<br><br>
 {% include 'footer.html' %}
 
 </body>

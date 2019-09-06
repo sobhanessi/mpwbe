@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block main_news %}
-		<hr>
+		
 		<article class="articlenewspage">
 		  <img class="imgnewspage" src="{{ object.main_pic.url }}" alt="akse khabar">
 		  <br><br>
@@ -19,7 +19,7 @@
 		 
 		 <!-- inja dastresi ha ro dorost konam -->
 			   
-		  {% if user.is_athenticated == admin %}
+		  {% if user.is_athenticated  %}
 		  <p class="paragraphnewspage">
 			  <a href="{{object.get_absolute_url}}edit"> edit</a>
 			  <a href="{{object.get_absolute_url}}delete"> delete</a>
