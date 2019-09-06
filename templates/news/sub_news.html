@@ -19,7 +19,7 @@
 		 
 		 <!-- inja dastresi ha ro dorost konam -->
 			   
-		  {% if user.is_authenticated %}
+		  {% if user.is_athenticated == admin %}
 		  <p class="paragraphnewspage">
 			  <a href="{{object.get_absolute_url}}edit"> edit</a>
 			  <a href="{{object.get_absolute_url}}delete"> delete</a>
