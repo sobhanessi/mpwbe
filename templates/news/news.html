@@ -8,7 +8,7 @@
 
 {% include 'header.html' %}
 <!-- yadam bashe inja baraye seo tag hayi ke zadam ro biaram inja -->
-<meta name="keywords" content="dawshessi, sobhanessi, sobhanesfandiari, Sobhan Esfandiari,Sobhan Esfandyari ,sobhanessi news,sobhanessi hardware,sobhan esfandiari news, dawshessi news, dawshessi hardware">
+<meta name="keywords" content="{% block seo %} {% endblock %}">
 
 {% load static %}
 <link href="{% static 'pages/general.css' %}" rel="stylesheet" type="text/css" />

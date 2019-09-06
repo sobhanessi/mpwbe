@@ -4,7 +4,9 @@
 {% block static_css_adding %}
     <link href="{% static 'pages/subnews.css' %}" rel="stylesheet" type="text/css" />
 {% endblock %}
-
+{% block seo %}
+	{{ object.tags }}
+{% endblock %}
 {% block main_news %}
 		
 		<article class="articlenewspage">
@@ -13,10 +15,17 @@
 		  <h3 class="headingnewspage">
 			{{ object.title }}
 		  </h3>
+		  <p class="paragraphnewspage" style="font-size:0.9vw; font-style:italic;">
+			{{ object.author }} <br>
+			{{ object.date }}
+		  </p>
+		  <p class="paragraphnewspage">
+			{{ object.brief }}
+		  </p>
 		  <p class="paragraphnewspage">
 			{{ object.article | safe }}
 		  </p>
-		 
+		  
 		 <!-- inja dastresi ha ro dorost konam -->
 			   
 		  {% if user.is_athenticated  %}

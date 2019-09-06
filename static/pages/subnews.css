@@ -77,19 +77,30 @@
 
     @media (min-width:751px){
 	
+      .articlenewspage{
+
+	    
+	width:80%;
+	margin:10px 5% 5px 5%;
+	padding:5px 5px 5px 5px; 
+    
+	  }
+      
+      
       .imgnewspage{
         
 	height:60%; 
 	width:40%;
-	float:center;
+	float:right;
 	padding:1px 1px 1px 5px;
-	margin:5px 20% 5px 20%;
+	margin:5px 20% 5px 30%;
+	display:block;
 
       }
 
       .paragraphnewspage{
 
-	width:80%;
+	width:70%;
 	text-align:justify;
 	margin:0 auto;
 	padding:20px 1px 5px 1px;
@@ -99,7 +110,7 @@
 
       .headingnewspage{
 	
-	width:80%;
+	width:70%;
 	text-align:justify;
 	padding:1px 1px 5px 5px;
 	margin: 0 auto;
