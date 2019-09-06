@@ -1,0 +1,9 @@
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+<form  method='POST' action='' style="margin-left:15%;"> {% csrf_token %}	
+	<input type="submit" value="Delete">
+</form>
+{% endblock %}
