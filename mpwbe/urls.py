@@ -18,14 +18,15 @@ from django.urls import path ,include
 from django.conf import settings #
 from django.conf.urls.static import static #
 from pages.views import login_view , contact_view , politics_view 
+from static_pages.views import HomePageView , AboutPageView
 
 urlpatterns = [
     
-    path('', include('static_pages.urls')),
-    path('aboutme/', include('static_pages.urls')),
+    path('', HomePageView.as_view() , name = 'home'),
+	path('aboutme/', AboutPageView.as_view(), name = 'aboutme'),
     path('news/', include('news.urls')),
     path('admin/', admin.site.urls),
-    path('login/', login_view , name='login'),
+    path('accounts/', include('django.contrib.auth.urls')),
     path('contact/', contact_view , name = 'contact'),
     path('politics/', politics_view , name='politics'),
     #path('newscreate/', news_create_view ),
