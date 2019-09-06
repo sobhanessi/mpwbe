@@ -16,14 +16,15 @@
 		  <p class="paragraphnewspage">
 			{{ object.article | safe }}
 		  </p>
-		  {% ############################## inja bayad dastresi bezaram ke bebine
-			  user i ke vared shode hagh dare edit kone ya na
-			  agar na ke neshoon nade
-			   ######################## %}
+		 
+		 <!-- inja dastresi ha ro dorost konam -->
+			   
+		  {% if user.is_authenticated %}
 		  <p class="paragraphnewspage">
 			  <a href="{{object.get_absolute_url}}edit"> edit</a>
 			  <a href="{{object.get_absolute_url}}delete"> delete</a>
 		  </p>
+		  {% endif %}
 		</article>
 		<br><br><br>
 		<hr>

@@ -61,7 +61,7 @@
 	    
 	    float:center;
 	    text-align:center;
-        overflow:hidden;
+	    overflow:hidden;
 	    padding: 1% 10px 10px 5px;
           
         }
@@ -73,7 +73,7 @@
 	  
 	}
 	
-	.topnav a {
+	.topnav a , #pnav{
 	  
 	  float:center;
 	  text-align:left;
@@ -85,11 +85,17 @@
 	
     }
    
-	a:link {
+    a:link {
 
         color: rgb(247, 156, 46);
         text-decoration: none;
       }
+      
+    #pnav {
+    
+	color: rgb(247, 156, 46);
+        text-decoration: none;
+    }
 
 
     a:visited {
