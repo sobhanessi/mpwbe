@@ -9,7 +9,7 @@
 
     <a href="{% url 'politics' %}"><i class="fa fa-book"></i>  Politics </a>
     <a href="{% url 'aboutme' %}"><i class="fa fa-paperclip"></i>  About Me </a>
-    <a href="{% url 'news' %}"><i class="fa fa-rss"></i>  Computer News </a>
+    <a href="{% url 'main_news' %}"><i class="fa fa-rss"></i>  Computer News </a>
     
     <!-- inja link konam be safheye khode user ke betoone logout kone -->
     {% if user.is_authenticated %}
