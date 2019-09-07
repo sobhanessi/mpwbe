@@ -4,29 +4,29 @@ from django.http import HttpResponse
 # Create your views here.
 from django.views.generic import ListView, DetailView  
 from django.views.generic.edit import CreateView , UpdateView , DeleteView
-from .models import PreNews #, NewsCreateTM
+from .models import PreNews2 #, NewsCreateTM
 from .forms import PreNewsForm
 
 class NewsListView(ListView):
 	
-	model = PreNews
+	model = PreNews2
 	template_name = 'news/main_news.html'
-	queryset = PreNews.objects.order_by('-date')
+	queryset = PreNews2.objects.order_by('-date')
 
 class NewsDetailView(DetailView):
 	
-	model = PreNews
+	model = PreNews2
 	template_name = 'news/sub_news.html'
 	#slug_url_kwarg = 'slug'
 	
 	def get_object(self):
 		slug_ = self.kwargs.get('slug')
-		return get_object_or_404(PreNews,slug=slug_)
+		return get_object_or_404(PreNews2,slug=slug_)
 		
 
 class NewsCreateView(CreateView):
 
-	model = PreNews
+	model = PreNews2
 	#fields = [ 'author' , 'title' , 'main_pic' , 'choice', 'brief', 'article', 'slug', 'tags' ]
 	fields = '__all__'
 	#form_class = PreNewsForm
@@ -66,12 +66,12 @@ class NewsCreateView(CreateView):
 	
 class NewsUpdateView(UpdateView):
 	
-	model = PreNews
+	model = PreNews2
 	template_name = 'create/news_create.html'
 	fields = '__all__'
 
 class NewsDeleteView(DeleteView):
 	
-	model = PreNews
+	model = PreNews2
 	template_name = 'create/sub_news_delete.html'
 	success_url = reverse_lazy('news')

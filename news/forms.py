@@ -1,12 +1,12 @@
 from django import forms
 
-from .models import PreNews
+from .models import PreNews2
 
 
 class PreNewsForm(forms.ModelForm):
 	
 	class Meta:
-		model = PreNews
+		model = PreNews2
 		fields = [
 			'author',
 			'title',

@@ -11,14 +11,7 @@
     <a href="{% url 'aboutme' %}"><i class="fa fa-paperclip"></i>  About Me </a>
     <a href="{% url 'main_news' %}"><i class="fa fa-rss"></i>  Computer News </a>
     
-    <!-- inja link konam be safheye khode user ke betoone logout kone -->
-    {% if user.is_authenticated %}
-        <a href="{% url 'logout' %}"><i class="fa fa-users"></i>
-         {{ user.username }} / Log Out
-        </a>
-    {% else %}
-        <a href="{% url 'login' %}"><i class="fa fa-users"></i>  Login / Sign Up</a>
-    {% endif %}
+    
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i></a>
 
