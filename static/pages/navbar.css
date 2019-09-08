@@ -18,22 +18,24 @@
 			
     }
     
-    .topnav a:not(:first-child) {
+    .topnav li:not(:first-child) {
     
 		display:none;
 
     }
     
-    .topnav a.icon {
+    .topnav li.icon {
     
 		display:block;
 		float:right;
+		color:rgb(247, 156, 46);
 		
     }
     
     .topnav.responsive {
     
 		position:sticky;
+		color:rgb(247, 156, 46);
     }
     
     .topnav.responsive .icon{
@@ -42,15 +44,16 @@
 		right:0;
 		top:0;
 		padding : 2% 1% 1% 2%;
+		color:rgb(247, 156, 46);
 		
     }
     
-    .topnav.responsive a {
+    .topnav.responsive li {
     
 		display:block;
 		float:none;
 		text-align:left;
-		
+		color:rgb(247, 156, 46);
     }
     
    }
@@ -72,7 +75,7 @@
 	  
 	}
 	
-	.topnav a {
+	.topnav li {
 	  
 	  float:center;
 	  text-align:left;
