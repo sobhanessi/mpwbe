@@ -29,12 +29,12 @@
     <div class="input-group" style="width:100%;">
       
       <span class="input-group-addon" style="width:40%;">Email:&nbsp;</span>
-      {{ form.username }}
+      <input type='text' name='{{ form.username.name }}'  id='{{ form.username.id_for_label }}' class = 'form-control'>
     </div>
     <br>
     <div class="input-group" style="width:100%;">
       <span class="input-group-addon" style="width:40%;">Password:&nbsp;</span>
-      {{ form.password }}
+      <input type='password' name='{{ form.password.name }}'  id='{{ form.password.id_for_label }}' class = 'form-control'>
     </div>
     <br><br>
     <p style="text-align:center;">Don't have an account? <a href="{% url 'signup' %}">Sign Up here.</a></p>
