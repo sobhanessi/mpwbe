@@ -24,7 +24,7 @@
       
       <span class="input-group-addon" style="width:20%;">Author</span>
 
-      {{ form.author }}
+      <input type='text' name='{{ form.author.name }}'  id='{{ form.author.id_for_label }}' class = 'form-control'>
       
     </div><br>
     
@@ -32,14 +32,14 @@
       
       <span class="input-group-addon" style="width:20%;">title</span>
       
-      {{ form.title }}
+      <input type='text' name='{{ form.title.name }}'  id='{{ form.title.id_for_label }}' class = 'form-control'>
 
     </div>
     <br>
     <div class="input-group" style="width:100%;">
       
       <span class="input-group-addon" style="width:20%;">tags</span>
-      {{ form.tags }}
+      <input type='text' name='{{ form.tags.name }}'  id='{{ form.tags.id_for_label }}' class = 'form-control'>
 
     </div>
     <br>
@@ -55,7 +55,7 @@
       
       <span class="input-group-addon" style="width:20%;">slug</span>
       
-      {{ form.slug }}
+      <input type='text' name='{{ form.slug.name }}'  id='{{ form.slug.id_for_label }}' class = 'form-control'>
 
     </div>
     <br>
@@ -71,15 +71,15 @@
       
       <span class="input-group-addon" style="width:20%;">brief</span>
       
-      {{ form.brief }}
+      <textarea name='{{ form.biref.name }}'  id='{{ form.breif.id_for_label }}' class = 'form-control' aria-label="brief"></textarea>
 
     </div>
     <br>
     <div class="input-group" style="width:100%;">
       
       <span class="input-group-addon" style="width:20%;">article</span>
-      
-      {{ form.article }}
+  
+      <textarea name='{{ form.article.name }}'  id='{{ form.article.id_for_label }}' class = 'form-control' aria-label="article"></textarea>
 
     </div>
     <br>
