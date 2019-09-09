@@ -13,10 +13,10 @@
   {% if user.is_authenticated %}
     <li>
       <div class="dropdown">
-        <a style="color:rgb(247, 156, 46); font-style:inherit;"><i class="fa fa-users"> Hello {{ user.username }}</i></a>
+        <a style="color:rgb(247, 156, 46); font-family:inherit;"><i class="fa fa-users">  Hello {{ user.username }}</i></a>
         <div class="dropdown-content">
-            <a href="{% url 'logout' %}">Log Out</a>
-            <a href="{% url 'password_change' %}">Change Password</a>
+            <a style="display:block;" href="{% url 'logout' %}">Log Out</a>
+            <a style="display:block;" href="{% url 'password_change' %}">Change Password</a>
         </div>
       </div>
     </li>
