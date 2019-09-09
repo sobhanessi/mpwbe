@@ -1,28 +1,32 @@
 {% load static %}
 {% block static_css_adding %}
 <link rel="stylesheet" type="text/css" href="{% static 'pages/navbar.css' %}" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 {% endblock %}
+
+
 <ul class="topnav" id="myTopnav">
-
-    <li><a href="{% url 'home' %}"><i class="fa fa-home"></i>  Home </a></li>
-    <li><a href="{% url 'contact' %}"><i class="fa fa-envelope"></i> Contact </a></li>
-
-    <li><a href="{% url 'politics' %}"><i class="fa fa-book"></i>  Politics </a></li>
-    <li><a href="{% url 'aboutme' %}"><i class="fa fa-paperclip"></i>  About Me </a></li>
-    <li><a href="{% url 'main_news' %}"><i class="fa fa-rss"></i>  Computer News </a></li>
-    
-    {% if user.is_authenticated %}
-       <li><a href="{% url 'logout' %}"><i class="fa fa-users"></i>
-         {{ user.username }} / Log Out
-        </a></li>
-    {% else %}
-        <li><a href="{% url 'login' %}"><i class="fa fa-users"></i>  Login / Sign Up</a></li>
-    {% endif %}
-    
-    
-    <li href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i></li>
-
+  <li><a href="{% url 'home' %}"><i class="fa fa-home"></i> Home </a></li>
+  <li><a href="{% url 'contact' %}"><i class="fa fa-envelope"></i> Contact </a></li>
+  <li><a href="{% url 'aboutme' %}"><i class="fa fa-paperclip"></i> About Me </a></li>
+  <li><a href="{% url 'main_news' %}"><i class="fa fa-rss"></i> News </a></li>
+  {% if user.is_authenticated %}
+    <li>
+      <div class="dropdown">
+        <a style="color:rgb(247, 156, 46); font-style:inherit;"><i class="fa fa-users"> Hello {{ user.username }}</i></a>
+        <div class="dropdown-content">
+            <a href="{% url 'logout' %}">Log Out</a>
+            <a href="{% url 'password_change' %}">Change Password</a>
+        </div>
+      </div>
+    </li>
+  {% else %}
+  <li><a href="{% url 'login' %}"><i class="fa fa-users"></i> Login / SignUp </a></li>
+  {% endif %}
+      <li href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+      
+  </li>
 
 
 <script>
@@ -35,5 +39,7 @@ function myFunction() {
   }
 }
 </script>
+
 <hr>
 </ul>
+    
