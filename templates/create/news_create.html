@@ -17,7 +17,7 @@
 <body id="indexbody">
 {% include 'navbar.html' %}
 <br><br>
-
+{% if user.username == 'admin' %}
  <form style="width:auto%;" method='POST' action='.' enctype="multipart/form-data"> {% csrf_token %}
  <div class="container">
     <div class="input-group" style="width:100%;">
@@ -90,7 +90,9 @@
 </div>
 
 </form>
-
+{% else %}
+  <h1 style="font-size:54px; text-align:center; color:white;"> You're not auhtorized to write</h1>
+{% endif %} 
 
 </body>
 

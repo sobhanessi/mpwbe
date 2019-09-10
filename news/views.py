@@ -1,3 +1,5 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.exceptions import PermissionDenied
 from django.shortcuts import render , get_object_or_404
 from django.urls import reverse ,reverse_lazy
 from django.http import HttpResponse
@@ -24,54 +26,43 @@ class NewsDetailView(DetailView):
 		return get_object_or_404(PreNews2,slug=slug_)
 		
 
-class NewsCreateView(CreateView):
+class NewsCreateView(LoginRequiredMixin , CreateView):
 
 	model = PreNews2
-	#fields = [ 'author' , 'title' , 'main_pic' , 'choice', 'brief', 'article', 'slug', 'tags' ]
 	fields = '__all__'
-	#form_class = PreNewsForm
 	template_name = 'create/news_create.html'
+	login_url = 'login'
 	
-	# ~ def form_valid(self, form):
-		
-		# ~ model = form.save(commit=False)
-		# ~ model.author = self.request.user
-		# ~ model.save()
-		
-		# ~ return HttpResponse('naridi khodaro shokr')
-		
-	# ~ def get_success_url(self):
-		
-		# ~ return reverse('sub_news_url')
-		
-		#print(self.request.user)
-		# ~ self.object = form.save(commit=False)
-		# ~ self.object.author = self.request.author
-		# ~ self.object.save()
-		# ~ form.instance.author = self.request.author
-		# ~ form.instance.date = datetime.now()
-		# ~ form.instance.save()
-		# ~ #return super(NewsCreateView, self).form_valid(form)
+	def form_valid(self, form):
 	
-	# ~ def form_valid(self, form):
-		# ~ #print(form.cleaned_data)
-		# ~ return super().form_valid(form)
+		form.instance.author = self.request.user
+		return super().form_valid(form)
+			
 	
-
-# ~ class NewsCreateT(CreateView):
-	
-	# ~ model = NewsCreateTM
-	# ~ template_name = 'create/news_create.html'
-	# ~ fields = '__all__'
-	
-class NewsUpdateView(UpdateView):
+class NewsUpdateView(LoginRequiredMixin , UpdateView):
 	
 	model = PreNews2
 	template_name = 'create/news_create.html'
 	fields = '__all__'
+	login_url = 'login'
+	
+	def dispath(self,request, *args, **kwargs):
+		
+		obj = self.get_object()
+		if obj.author != self.request.user :
+			raise PermissionDenied
+		return super().dispath(self,*args,**kwargs)
 
-class NewsDeleteView(DeleteView):
+class NewsDeleteView(LoginRequiredMixin , DeleteView):
 	
 	model = PreNews2
 	template_name = 'create/sub_news_delete.html'
 	success_url = reverse_lazy('news')
+	login_url = 'login'
+		
+	def dispath(self,request, *args, **kwargs):
+		
+		obj = self.get_object()
+		if obj.author != self.request.user :
+			raise PermissionDenied
+		return super().dispath(self,*args,**kwargs)
