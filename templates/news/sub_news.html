@@ -17,7 +17,7 @@
 		  </h3>
 		  <p class="paragraphnewspage" style="font-size:0.9vw; font-style:italic;">
 			{{ object.author }} <br>
-			{{ object.date }}
+			{{ object.date | date:"SHORT_DATETIME_FORMAT" }}
 		  </p>
 		  <p class="paragraphnewspage">
 			{{ object.brief }}

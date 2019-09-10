@@ -1,10 +1,9 @@
 from django.db import models
-from pages.models import LoginFormModel
-from django.urls import reverse
 # Create your models here.
 from django.conf import settings
-
-
+from django.contrib.auth import get_user_model
+from pages.models import LoginFormModel
+from django.urls import reverse
 
 # ~ class PreNews(models.Model):
 	
@@ -61,7 +60,7 @@ class PreNews2(models.Model):
 		(politics_international,'international politics'),
 			]
 	
-	author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete = models.CASCADE ,)
+	author = models.ForeignKey(get_user_model(), on_delete = models.CASCADE ,)
 	title = models.TextField(max_length=100,null=False)
 	tags = models.TextField(default='sobhan esfandyari,')
 	choice = models.CharField(max_length=3 , choices=news_choice , default=software)

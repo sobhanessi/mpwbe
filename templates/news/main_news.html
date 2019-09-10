@@ -9,6 +9,12 @@
 
 {% block main_news %}
 	
+	{% if user.username == 'admin' %}
+		<p class="paragraphnewspage">
+			
+			<a href="{% url 'news_create' %}">Create a new News.</a>
+		</p>
+	{% endif %}
 	{% for i in object_list %}
 		<article class="articlenewspage">
 		  <img class="imgnewspage" src="{{ i.main_pic.url }}" alt="akse khabar">

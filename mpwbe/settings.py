@@ -48,7 +48,7 @@ INSTALLED_APPS = [
 ##
 AUTH_USER_MODEL = 'users.CustomUser'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-
+##
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_HOST_USER = 'apikey'
 EMAIL_HOST_PASSWORD = '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'
@@ -122,7 +122,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Dublin'
 
 USE_I18N = True
 
