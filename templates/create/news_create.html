@@ -17,29 +17,21 @@
 <body id="indexbody">
 {% include 'navbar.html' %}
 <br><br>
-{% if user.username == 'admin' %}
+{% if user.is_staff %}
  <form style="width:auto%;" method='POST' action='.' enctype="multipart/form-data"> {% csrf_token %}
  <div class="container">
     <div class="input-group" style="width:100%;">
       
-      <span class="input-group-addon" style="width:20%;">Author</span>
-
-      <input type='text' name='{{ form.author.name }}'  id='{{ form.author.id_for_label }}' class = 'form-control'>
-      
-    </div><br>
-    
-    <div class="input-group" style="width:100%;">
-      
       <span class="input-group-addon" style="width:20%;">title</span>
       
-      <input type='text' name='{{ form.title.name }}'  id='{{ form.title.id_for_label }}' class = 'form-control'>
+      <textarea name='{{ form.title.name }}'  id='{{ form.title.id_for_label }}' class = 'form-control'></textarea>
 
     </div>
     <br>
     <div class="input-group" style="width:100%;">
       
       <span class="input-group-addon" style="width:20%;">tags</span>
-      <input type='text' name='{{ form.tags.name }}'  id='{{ form.tags.id_for_label }}' class = 'form-control'>
+      <textarea name='{{ form.tags.name }}'  id='{{ form.tags.id_for_label }}' class = 'form-control'></textarea>
 
     </div>
     <br>
@@ -71,7 +63,7 @@
       
       <span class="input-group-addon" style="width:20%;">brief</span>
       
-      <textarea name='{{ form.biref.name }}'  id='{{ form.breif.id_for_label }}' class = 'form-control' aria-label="brief"></textarea>
+      <textarea name='{{ form.brief.name }}'  id='{{ form.brief.id_for_label }}' class = 'form-control'></textarea>
 
     </div>
     <br>
@@ -79,7 +71,7 @@
       
       <span class="input-group-addon" style="width:20%;">article</span>
   
-      <textarea name='{{ form.article.name }}'  id='{{ form.article.id_for_label }}' class = 'form-control' aria-label="article"></textarea>
+      <textarea name='{{ form.article.name }}'  id='{{ form.article.id_for_label }}' class = 'form-control'></textarea>
 
     </div>
     <br>
@@ -87,13 +79,14 @@
     <div class="input-group" style="width:100%;">
       <input type="submit" class="btn btn-primary" value="Save">
     </div>
+
 </div>
+
 
 </form>
 {% else %}
-  <h1 style="font-size:54px; text-align:center; color:white;"> You're not auhtorized to write</h1>
-{% endif %} 
-
+  <h1 style="color:white; font-size:56px;">  You are not allowed  </h1>
+{% endif %}
 </body>
 
 </html>

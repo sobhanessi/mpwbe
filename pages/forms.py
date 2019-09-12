@@ -17,6 +17,6 @@ class ContactForm(forms.ModelForm):
 
 	class Meta:
 		model = ContactFormModel
-		fields = '__all__'
+		fields = ['message',]
 		
 		

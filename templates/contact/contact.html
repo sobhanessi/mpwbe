@@ -22,21 +22,12 @@
  
  <form style="width:100%;" method='POST' action='.' > {% csrf_token %}
  <div class="container">
-    <div class="input-group" style="width:100%;">
-      
-      <span class="input-group-addon" style="width:20%;">Username:&nbsp;<i class="glyphicon glyphicon-user"></i></span>
-
-<!--
-      <input type='text' name='{{ form.author.name }}'  id='{{ form.author.id_for_label }}' class = 'form-control'>
--->
-
-      {{ form.email }}
-
-    </div>
+    <p style="text-align:center;">Contact with me with this form :</p>
     <br>
     <div class="input-group" style="width:100%;">
       <span class="input-group-addon" style="width:40%;">Message:&nbsp;</span>
       <textarea name='{{ form.message.name }}'  id='{{ form.message.id_for_label }}' class = 'form-control' rows=8 cols=10></textarea>
+
     </div>
     
     <br>

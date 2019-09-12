@@ -11,12 +11,13 @@ from .forms import ContactForm
 class ContactView(LoginRequiredMixin , CreateView):
 
 	form_class = ContactForm
+	#fields = ['message',]
 	template_name = 'contact/contact.html'
 	login_url = 'login'
 	success_url = reverse_lazy('home')
 	def form_valid(self, form):
 	
-		form.instance.email = self.request.user
+		form.instance.username = self.request.user
 		return super().form_valid(form)
 		
 

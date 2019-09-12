@@ -27,14 +27,16 @@ class NewsDetailView(DetailView):
 		
 
 class NewsCreateView(LoginRequiredMixin , CreateView):
+	
 
-	model = PreNews2
-	fields = '__all__'
+	form_class = PreNewsForm
+	#fields = ['title','main_pic','article','brief','slug','tags','choice',]
 	template_name = 'create/news_create.html'
 	login_url = 'login'
+	success_url = reverse_lazy('main_news')
 	
 	def form_valid(self, form):
-	
+		
 		form.instance.author = self.request.user
 		return super().form_valid(form)
 			

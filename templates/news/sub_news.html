@@ -28,7 +28,7 @@
 		  
 		 <!-- inja dastresi ha ro dorost konam -->
 			   
-		  {% if user.username == 'admin'  %}
+		  {% if user.username == object.author  %}
 		  <p class="paragraphnewspage">
 			  <a href="{{object.get_absolute_url}}edit"> edit</a>
 			  <a href="{{object.get_absolute_url}}delete"> delete</a>
