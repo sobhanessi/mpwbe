@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
-
+from django.contrib.auth import get_user_model
+from django.conf import settings
 ####Create your models here.
 
 class LoginFormModel(models.Model):
@@ -42,8 +43,11 @@ class NewsModel(models.Model):
 
 class ContactFormModel(models.Model):
 	
-	username = models.CharField(default="",max_length=32,null=False,blank=False)
-	comment	 = models.TextField(max_length=1000,null=False,blank=False)
+	email = models.EmailField(get_user_model(), on_delete = models.CASCADE)
+	message	 = models.TextField(max_length=1000,null=False,blank=False)
 	date     = models.DateTimeField(auto_now_add=True)
+	
 	def __str__(self):
-		return (self.username,self.comment)
+		return '{}   //   {}   //   {}'.format(self.email, self.message, self.date)
+	# ~ def get_absolute_url(self):
+		# ~ return reverse('contact',kwargs={'id':self.id})

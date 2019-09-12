@@ -12,17 +12,11 @@ class LoginForm(forms.Form):
 	email	 = forms.EmailField(widget=forms.EmailInput(attrs={'class':"form-control"}))
 	password = forms.CharField(widget=forms.PasswordInput(attrs={'class':"form-control"}))
 
-class ContactForm(forms.Form):
+class ContactForm(forms.ModelForm):
 	
-	username = forms.CharField(label=None,widget=forms.TextInput(attrs={ 'class':"form-control" , 'id': 'usr'}))
-	comment	 = forms.CharField(label=None,widget=forms.Textarea(attrs={ 'class':'form-control', 'id':'msg' , 'rows':8 }))
-	
-	# ~ class Meta:
-		# ~ model = ContactFormModel
-		# ~ fields = {
-			# ~ 'username',
-			# ~ 'comment'
-		
-		# ~ }
+
+	class Meta:
+		model = ContactFormModel
+		fields = '__all__'
 		
 		

@@ -18,7 +18,7 @@ class PreNews2(models.Model):
 		(politics_international,'international politics'),
 			]
 	
-	author = models.ForeignKey(get_user_model(), on_delete = models.CASCADE ,)
+	author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete = models.CASCADE ,)
 	title = models.TextField(max_length=100,null=False)
 	tags = models.TextField(default='sobhan esfandyari,')
 	choice = models.CharField(max_length=3 , choices=news_choice , default=software)
@@ -37,7 +37,7 @@ class PreNews2(models.Model):
 class Comment(models.Model):
 	
 	article = models.ForeignKey( PreNews2 , on_delete = models.CASCADE, related_name = 'comments',)
-	author = models.ForeignKey( get_user_model() , on_delete = models.CASCADE,)
+	author = models.ForeignKey( settings.AUTH_USER_MODEL , on_delete = models.CASCADE,)
 	comment = models.TextField(max_length=512)
 	
 	def __str__(self):

@@ -2,9 +2,23 @@ from django.shortcuts import render , redirect
 from django.http import HttpResponse ,Http404
 from django.shortcuts import get_object_or_404
 from .forms import LoginForm, ContactForm , NewsCreateForm
-from .models import LoginFormModel,NewsModel,ContactFormModel
-from django.views.generic import ListView,UpdateView,CreateView,DeleteView,DetailView
+from .models import ContactFormModel
+from django.views.generic.edit import CreateView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse_lazy
+from .forms import ContactForm
 
+class ContactView(LoginRequiredMixin , CreateView):
+
+	form_class = ContactForm
+	template_name = 'contact/contact.html'
+	login_url = 'login'
+	success_url = reverse_lazy('home')
+	def form_valid(self, form):
+	
+		form.instance.email = self.request.user
+		return super().form_valid(form)
+		
 
 # ~ class NewsView(ListView):
 	
@@ -32,23 +46,23 @@ from django.views.generic import ListView,UpdateView,CreateView,DeleteView,Detai
 	
 
 
-def contact_view(request):
-	#
-	my_form = ContactForm(auto_id=False)
-	if request.method == 'POST':
-		my_form = ContactForm(request.POST, auto_id=False)
-		if my_form.is_valid():
-			usrn = request.POST.get('username')
-			try:
-				usr_login = LoginFormModel.objects.get(username=usrn)
-				usr_msg   = ContactFormModel.objects.create(**my_form.cleaned_data)
-				return HttpResponse('successful')
-			except:
-				raise Http404
-	my_context = {
-		'contact' : my_form
-	}
-	return render(request, 'contact/contact.html' , my_context)
+# ~ def contact_view(request):
+	# ~ #
+	# ~ my_form = ContactForm(auto_id=False)
+	# ~ if request.method == 'POST':
+		# ~ my_form = ContactForm(request.POST, auto_id=False)
+		# ~ if my_form.is_valid():
+			# ~ usrn = request.POST.get('username')
+			# ~ try:
+				# ~ usr_login = LoginFormModel.objects.get(username=usrn)
+				# ~ usr_msg   = ContactFormModel.objects.create(**my_form.cleaned_data)
+				# ~ return HttpResponse('successful')
+			# ~ except:
+				# ~ raise Http404
+	# ~ my_context = {
+		# ~ 'contact' : my_form
+	# ~ }
+	# ~ return render(request, 'contact/contact.html' , my_context)
 
 
 
