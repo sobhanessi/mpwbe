@@ -43,8 +43,9 @@ class NewsCreateView(LoginRequiredMixin , CreateView):
 class NewsUpdateView(LoginRequiredMixin , UpdateView):
 	
 	model = PreNews2
-	template_name = 'create/news_create.html'
-	fields = '__all__'
+	#form_class = PreNewsForm
+	template_name = 'create/newsupdate.html'
+	fields = ['title','main_pic','article','brief','slug','tags','choice',]
 	login_url = 'login'
 	
 	def dispath(self,request, *args, **kwargs):
@@ -58,7 +59,7 @@ class NewsDeleteView(LoginRequiredMixin , DeleteView):
 	
 	model = PreNews2
 	template_name = 'create/sub_news_delete.html'
-	success_url = reverse_lazy('news')
+	success_url = reverse_lazy('main_news')
 	login_url = 'login'
 		
 	def dispath(self,request, *args, **kwargs):
