@@ -27,8 +27,7 @@ class NewsDetailView(DetailView):
 		
 
 class NewsCreateView(LoginRequiredMixin , CreateView):
-	
-
+		
 	form_class = PreNewsForm
 	#fields = ['title','main_pic','article','brief','slug','tags','choice',]
 	template_name = 'create/news_create.html'
